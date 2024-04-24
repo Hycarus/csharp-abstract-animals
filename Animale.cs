@@ -7,67 +7,67 @@ namespace csharp_abstract_animals
 		{
 			Console.WriteLine("Zzz");
 		}
-		public abstract void Verso();
-		public abstract void Mangia();
+		public abstract string Verso();
+		public abstract string Mangia();
 	}
 
 	public class Cane : Animale
 	{
-        public override void Mangia()
+        public override string Mangia()
         {
-			Console.WriteLine("Mangime per cani");
+			return "ogni tipo di carne";
         }
-        public override void Verso()
+        public override string Verso()
         {
-			Console.WriteLine("Bau, bau");
+			return "Bau, bau";
         }
     }
 
 	public class Passerotto : Animale, IVolante
 	{
-        public override void Mangia()
+        public override string Mangia()
         {
-            Console.WriteLine("Cip, cip");
+            return "fiocchi d'avena, noci e nocciole, uvette e frutta";
         }
-        public override void Verso()
+        public override string Verso()
         {
-            Console.WriteLine("Vermi");
+            return "Cip, cip";
         }
-        public void Vola()
+        public string Vola()
         {
-            Console.WriteLine("Sto volando!!");
+            return "Sto volando!!";
         }
     }
 
     public class Aquila : Animale, IVolante
     {
-        public override void Mangia()
+        public override string Mangia()
         {
-            Console.WriteLine("*Inserire qui cosa mangia l'aquila*");
+            return "volpi, lepri, marmotte, conigli selvatici e faine";
         }
-        public override void Verso()
+        public override string Verso()
         {
-            Console.WriteLine("*Inserire qui il verso dell'aquila*");
+            return "Screech";
         }
-        public void Vola()
+        public string Vola()
         {
-            Console.WriteLine("Sto volando!!");
+            return "Sto volando!!";
         }
     }
 
     public class Delfino : Animale, INuotante
     {
-        public override void Mangia()
+        public override string Mangia()
         {
-            Console.WriteLine("*Inserire qui cosa mangia il delfino*");
+            return "pesci";
         }
-        public override void Verso()
+        public override string Verso()
         {
-            Console.WriteLine("*Inserire qui il verso del delfino*");
+            return "Ride";
         }
-        public void Nuota()
+        public string Nuota()
         {
-            Console.WriteLine("Sto nuotando!!");
+            return "Sto nuotando!!";
         }
     }
 }

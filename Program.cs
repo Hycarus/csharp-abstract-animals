@@ -9,41 +9,29 @@ class Program
         Aquila aquila = new();
         Delfino delfino = new();
 
-        Console.Write("Ecco il verso del cane: ");
-        cane.Verso();
-        Console.Write("Ecco cosa mangia il cane: ");
-        cane.Mangia();
+        List<Animale> animali = new()
+        {
+            cane, delfino, aquila, passerotto
+        };
 
-        Console.Write("Ecco il verso del passerotto: ");
-        passerotto.Verso();
-        Console.Write("Ecco cosa mangia il passerotto: ");
-        passerotto.Mangia();
+        foreach(Animale animale in animali)
+        {
+            Console.WriteLine($"Ecco il verso di {animale.GetType().Name}: '{animale.Verso()}' ed ecco cosa mangia: {animale.Mangia()}");
+        }
 
-        Console.Write("Ecco il verso dell'aquila: ");
-        aquila.Verso();
-        Console.Write("Ecco cosa mangia l'aquila: ");
-        aquila.Mangia();
-
-        Console.Write("Ecco il verso del delfino: ");
-        delfino.Verso();
-        Console.Write("Ecco cosa mangia il delfino: ");
-        delfino.Mangia();
-
-        Console.Write("Ecco cosa fa il delfino: ");
-        FaiNuotare(delfino);
-
-        Console.Write("Ecco cosa fa l'aquila: ");
-        FaiVolare(aquila);
+        Console.WriteLine($"Ecco cosa fa il delfino: {FaiNuotare(delfino)}");
+        Console.WriteLine($"Ecco cosa fa l'aquila: {FaiVolare(aquila)}");
+        
     }
 
-    public static void FaiVolare(IVolante animale)
+    public static string FaiVolare(IVolante animale)
     {
-        animale.Vola();
+        return animale.Vola();
     }
 
-    public static void FaiNuotare(INuotante animale)
+    public static string FaiNuotare(INuotante animale)
     {
-        animale.Nuota();
+        return animale.Nuota();
     }
 
 

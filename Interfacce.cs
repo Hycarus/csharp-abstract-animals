@@ -3,12 +3,12 @@ namespace csharp_abstract_animals
 {
 	public interface IVolante
 	{
-		public void Vola();
+		public string Vola();
 	}
 
 	public interface INuotante
 	{
-		public void Nuota();
+		public string Nuota();
 	}
 }
 
